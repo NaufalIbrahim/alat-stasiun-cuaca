@@ -124,28 +124,4 @@ void loop() {
   delay(1000);
   
 
-
-  
-
-  /*
-  digitalWrite(senderLed, LOW);
-  digitalWrite(errorLed, LOW);
-  
-  Serial.print("Sending packet: ");
-  Serial.println(counter);
-
-  // send packet
-  LoRa.beginPacket();
-  LoRa.print("hello from kelompok 2");
-  digitalWrite(senderLed, HIGH);
-  delay(500);
-  digitalWrite(senderLed, LOW);
-  
-  LoRa.print(counter);
-  LoRa.endPacket();
-
-  counter++;
-
-  delay(5000); //antara 2000 / 5000
-  */
 }
