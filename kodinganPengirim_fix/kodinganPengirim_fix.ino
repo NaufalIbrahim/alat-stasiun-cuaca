@@ -52,7 +52,7 @@ void setup() {
   Serial.println("Starting to run RTC DS1307...");
   delay(100);
 
-  //----------------------------------------------Checks whether the DS1307 RTC can be run or not
+  // Checks whether the DS1307 RTC can be run or not
   if (! rtc.isrunning()) {
     Serial.println("RTC is NOT running!");
     //delay(100);
@@ -149,7 +149,9 @@ void loop() {
   Serial.print(pres);
   Serial.print(" Pa");
   Serial.println();
-
+  
+  // untuk memasukkan data ke data logger
+  
     /*
     myFile = SD.open("dataSensor.txt", FILE_WRITE);
     if (myFile) {
@@ -162,27 +164,18 @@ void loop() {
       myFile.print(" (");
       myFile.print(daysOfTheWeek[now.dayOfTheWeek()]);
       myFile.print(") ");
-      
       myFile.print(",");
-      
       myFile.print(now.hour(), DEC);
       myFile.print(':');
       myFile.print(now.minute(), DEC);
       myFile.print(':');
       myFile.print(now.second(), DEC);
-      
       myFile.print(",");
-
       myFile.print(temp);
-
       myFile.print(",");
-
       myFile.print(hum);
-
       myFile.print(",");
-
       myFile.print(pres);
-
       myFile.close();
 
       Serial.println("Sukses menulis data ke Micro SD");
@@ -210,97 +203,6 @@ void loop() {
     Serial.print(" Pa");
     */
 
-    
-  //Millis untuk mengupdate Tanggal, Waktu, Temperatur, Kelembaban, dan Tekanan udara
-
-  /*
-  unsigned long currentMillis = millis();
-  if (currentMillis - previousMillis >= 1000) {
-    // save the last time you blinked the LED
-    previousMillis = currentMillis;
-
-    DateTime now = rtc.now();
-
-    //var sensors
-    //dht
-    temp = dht.readTemperature();
-    hum = dht.readHumidity();
-    //bmp
-    //pres = bmp.readPressure();
-
-    if(now.second() %5 == 0){
-      Serial.println("----");
-      //Printing Tanggal dan Waktu di serial monitor
-      Serial.print(now.year(), DEC);
-      Serial.print('/');
-      Serial.print(now.month(), DEC);
-      Serial.print('/');
-      Serial.print(now.day(), DEC);
-      Serial.print(" (");
-      Serial.print(daysOfTheWeek[now.dayOfTheWeek()]);
-      Serial.print(") ");
-      Serial.print(now.hour(), DEC);
-      Serial.print(':');
-      Serial.print(now.minute(), DEC);
-      Serial.print(':');
-      Serial.print(now.second(), DEC);
-
-      Serial.print("Temperature : ");
-      Serial.print(temp);
-      Serial.print(" °C");
-      Serial.print(" | Kelembaban : ");
-      Serial.print(hum);
-      Serial.print(" %");
-      //Serial.print(" | Tekanan udara: ");
-      //Serial.print(pres);
-      //Serial.print(" Pa");
-      Serial.println();
-
-      myFile = SD.open("dataSensor.txt", FILE_WRITE);
-      if (myFile) {
-        Serial.print("mencetak dataSensor.txt");
-        myFile.print(now.year(), DEC);
-        myFile.print('/');
-        myFile.print(now.month(), DEC);
-        myFile.print('/');
-        myFile.print(now.day(), DEC);
-        myFile.print(" (");
-        myFile.print(daysOfTheWeek[now.dayOfTheWeek()]);
-        myFile.print(") ");
-
-        myFile.print(",");
-
-        myFile.print(now.hour(), DEC);
-        myFile.print(':');
-        myFile.print(now.minute(), DEC);
-        myFile.print(':');
-        myFile.print(now.second(), DEC);
-
-        myFile.print(",");
-
-        myFile.print(temp);
-
-        myFile.print(",");
-
-        myFile.print(hum);
-
-        //myFile.print(",");
-
-        //myFile.print(pres);
-
-        myFile.close();
-
-        Serial.println("Sukses menulis data ke Micro SD");
-        Serial.println("----");
-        Serial.println();
-      } else {
-        Serial.print("Kesalahan membuka dataSensor.txt");
-      }
-    }
-  }
-  */
-  
-  
   
   
   Serial.print("Sending packet: ");
