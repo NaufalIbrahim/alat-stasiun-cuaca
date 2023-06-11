@@ -11,8 +11,8 @@ String apiKey = "HVMD5HB13WJOI17H";
 
 // Replace with your network credentials
 
-const char* ssid = "OSPF";
-const char* password = "fagil63$";
+const char* ssid = "****";
+const char* password = "****";
 const char* server = "api.thingspeak.com";
 
 int channelTS = 1758760;
